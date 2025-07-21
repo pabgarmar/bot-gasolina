@@ -8,8 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-# BOT_TOKEN = "7766831416:AAHZIlb1L8oQ0IwDX9-YZywkhgrMTkbrPRU"
+BOT_TOKEN = "7766831416:AAHZIlb1L8oQ0IwDX9-YZywkhgrMTkbrPRU"
 
 
 def guardar_en_csv(estaciones, tipo_combustible, archivo='estaciones_combustible.csv'):
