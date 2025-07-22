@@ -18,7 +18,7 @@ def guardar_en_csv(estaciones, tipo_combustible, archivo='estaciones_combustible
     with open(archivo, mode='a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
 
-        # Escribir encabezado si el archivo es nuevo
+        # Encabezado del csv
         if not archivo_existe:
             writer.writerow(["Fecha y Hora", "Tipo Combustible", "Nombre Estación", "Dirección", "Localidad", "Precio", "Latitud", "Longitud"])
 
@@ -148,14 +148,13 @@ async def combustible(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if mensaje.startswith("❌") or mensaje.startswith("⚠️"):
         await update.message.reply_text(mensaje, parse_mode="Markdown")
     else:
-        # ✅ Primero envía el mensaje de texto bien formateado
+       
         await update.message.reply_text(mensaje, parse_mode="Markdown")
         
-        # ✅ Luego, si hay imagen, envíala correctamente
+        
         if imagen and os.path.isfile(imagen):
             with open(imagen, "rb") as photo:
                 await update.message.reply_photo(photo)
-            os.remove(imagen)  # Opcional: borrar la imagen temporal
 
 
 
