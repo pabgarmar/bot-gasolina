@@ -131,7 +131,7 @@ def getEstaciones(ciudad):
 
 # Comando /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("¡Hola! Usa /combustible seguido de una ciudad. Ejemplo:\n/combustible Sevilla")
+    await update.message.reply_text("¡Hola! Usa /combustible seguido de una ciudad. Ejemplo:\n/combustible Madrid")
 
 
 # Comando /combustible <ciudad>
