@@ -62,13 +62,9 @@ def mostrar_grafica_top5(top_gasolina, top_diesel, output_path="grafica_combusti
     plt.ylabel("Precio (€)")
     plt.title("Top 5 precios más baratos - Gasolina 95 y Diésel")
 
-    # Definir ticks manuales según tu solicitud
     ticks = [0, 0.5, 1, 1.2, 1.3, 1.4, 1.5, 1.6]
     plt.yticks(ticks)
-
-    # Limitar rango para que sea visible todo lo que pides
     plt.ylim(0, 1.6)
-
     plt.legend()
     plt.tight_layout()
     plt.savefig(output_path)
@@ -118,7 +114,7 @@ def getEstaciones(ciudad):
     guardar_en_csv(top_5_gasolina, "Gasolina95", 'historico_gasolina.csv')
     guardar_en_csv(top_5_gasoil, "Diesel", 'historico_gasoil.csv')
 
-    # Generar gráfica como imagen
+    # Generar gráfica como una imagen
     output_image = f"grafica_{ciudad.lower().replace(' ', '_')}.png"
     mostrar_grafica_top5(top_5_gasolina, top_5_gasoil, output_image)
 
@@ -135,7 +131,7 @@ def getEstaciones(ciudad):
 
 # Comando /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("¡Hola! Usa /combustible seguido de una ciudad. Ejemplo:\n/combustible Madrid")
+    await update.message.reply_text("¡Hola! Usa /combustible seguido de una ciudad. Ejemplo:\n/combustible Sevilla")
 
 
 # Comando /combustible <ciudad>
